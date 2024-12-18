@@ -30,6 +30,7 @@ jobs:
           aws-access-key-id: ${{ secrets.TF_VAR_access_key }}
           aws-secret-access-key: ${{ secrets.TF_VAR_secret_key }}
           aws-session-token: ${{ secrets.TF_VAR_session_token }}
+          aws-account-id: ${{ secrets.TF_VAR_account_id }}
           aws-region: ${{ secrets.TF_VAR_aws_region }}
 
       - name: Setup Terraform
