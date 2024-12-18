@@ -1,22 +1,22 @@
 variable "access_key" {
   description = "Aws access key"
   type        = string
-  default     = ""
+  default     = "ASIASBPSPDOIVMIZ5OBS"
 }
 variable "secret_key" {
   description = "Aws secret key"
   type        = string
-  default     = ""
+  default     = "A0hVWVwjO+qVYqEbtOvLUGrUsEpFF4e5tp2zWUeZ"
 }
 variable "account_id" {
   description = "Aws account id"
   type        = string
-  default     = "970849062346"
+  default     = "140631808913"
 }
 variable "session_token" {
   description = "Aws session token"
   type        = string
-  default     = ""
+  default     = "IQoJb3JpZ2luX2VjEIj//////////wEaCXVzLXdlc3QtMiJIMEYCIQCiqlBx/u0DzRg888so+eT7XKGTj1snm9MQ4Zt3kpSWPgIhAN1t/+6GfFmz0LuCwANA5uUpyhjA+QBmImlICBDDWZOSKrgCCFEQABoMMTQwNjMxODA4OTEzIgzAI3aHuiSyekSA3h4qlQL6o/BrqX4VDmU7R9pt/JWfcgZhRGxMR7XwjvRSLxSHfN+fl+RHg3SaRZwY+lTqgeKY0jGF/Nl0xlCtPKhBbCeT55mZaDRiZ8KFxHcs9oJWfiK5bed1An4E//xJpaYD+uAVtJxFl5W/yteM9KAavLF1hrzvnWBzoJzOSHDFpgHjsBnczzEaXJmq4rriAblkqNbhYwuYMVUofNXwydskL6RwG4p6KAxpvZ7gejP4zAUCelCncw85+KI/eddVFMyMqSho5IaSUbvXZ7AqYa0JUbLGfi0gwTzk95pjfzYhLn60TBp6skklcoLoF2BG5S4eUfUMPrwyT5oROzmqAZRqB1oqLuKtD8CsQRXRzM5IYtElJPp3odpYMPijiLsGOpwBhBpuOyp0b6a27M+VsQX5sjWtyZnDNZPL2lgG7mgaafCbpzUlqV7YWKjO+70wF1Fp35sTjIzuCNyrWriAT5dDg67c7HXeCyT0DzDjInuHxLjE4Q8egX7UD06rQCE9p/j0ikra3PN222Ya9y342E8Y09dVhiM3JA9VWMk8sEqU37cYviKp/nHJpEoB2QI0KdEFgk1KYQeaS1i+2G46"
 }
 variable "aws_region" {
   description = "Região dos recursos"
