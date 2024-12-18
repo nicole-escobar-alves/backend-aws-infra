@@ -1,6 +1,6 @@
 
 
-<h3 align="center">Fest Food API - Tech Challenge - 8SOAT FIAP</h3>
+<h3 align="center">Fast Food API - Tech Challenge - 8SOAT FIAP</h3>
 
 ---
 
