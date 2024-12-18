@@ -64,19 +64,19 @@ variable "auto_scale_options" {
 variable "user_pool_name" {
   description = "Nome do Cognito User Pool"
   type        = string
-  default     = "Tech-Challenge-User-Pool-Teste"
+  default     = "Tech-Challenge-User-Pool2"
 }
 
 variable "client_name" {
   description = "Nome do App Client do Cognito"
   type        = string
-  default     = "Tech-Challenge-App-Client"
+  default     = "Tech-Challenge-App-Client2"
 }
 
 variable "domain_name" {
   description = "Prefixo do domínio para o Cognito"
   type        = string
-  default     = "tech-challenge-unique-teste"
+  default     = "tech-challenge-unique2"
 }
 
 variable "oauth_flows" {
