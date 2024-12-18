@@ -70,13 +70,13 @@ variable "user_pool_name" {
 variable "client_name" {
   description = "Nome do App Client do Cognito"
   type        = string
-  default     = "Tech-Challenge-App-Client2"
+  default     = "Tech-Challenge-App-Client3"
 }
 
 variable "domain_name" {
   description = "Prefixo do domínio para o Cognito"
   type        = string
-  default     = "tech-challenge-unique2"
+  default     = "tech-challenge-unique3"
 }
 
 variable "oauth_flows" {
