@@ -4,6 +4,8 @@ resource "aws_subnet" "ext_sub_a_tech_challenge" {
   cidr_block        = var.cidr_subnet_ext_a
   availability_zone = var.region_a
 
+  map_public_ip_on_launch = true
+
   tags = {
     Name = "External_Subnet-A-${var.environment}",
     "kubernetes.io/cluster/${var.eks_cluster_name}" = "shared"

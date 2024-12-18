@@ -66,7 +66,41 @@ module "nodes" {
   auto_scale_options    = var.auto_scale_options
 }
 
+module "cognito" {
+  source           = "./modules/cognito"
 
-module "apigtw" {
-  source = "./modules/apigtw"
+  user_pool_name   = var.user_pool_name
+  client_name      = var.client_name
+  domain_name      = var.domain_name
+  oauth_flows      = var.oauth_flows
+  oauth_scopes     = var.oauth_scopes
+  tags             = var.tags
+  
+  aws_region       = var.aws_region
+}
+
+module "lambda" {
+  source = "./modules/lambda"
+  account_id = var.account_id
+
+  lambda_name    = var.lambda_name
+  lambda_handler = var.lambda_handler
+  lambda_runtime = var.lambda_runtime
+  
+  # apigateway_source_arn = module.api_gateway.api_source_arn
+  
+  # Cognito config
+  cognito_client_id     = module.cognito.client_id
+  cognito_client_secret = module.cognito.client_secret
+  cognito_user_pool_id  = module.cognito.user_pool_id
+}
+
+module "api_gatewayv2" {
+  source = "./modules/api_gatewayv2"
+
+  lambda_arn = module.lambda.lambda_arn
+  lambda_invoke_arn = module.lambda.lambda_invoke_arn
+
+  cognito_client_id = module.cognito.client_id
+  cognito_user_pool_id = module.cognito.user_pool_id
 }

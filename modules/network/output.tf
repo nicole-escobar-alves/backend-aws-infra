@@ -38,11 +38,3 @@ output "nat_gateway_b" {
     description = "ID do NAT b"
     value = aws_nat_gateway.nat_gtw_a
 }
-# output "security_groups" {
-#     description = "ID do grupo de segurança do load balance"
-#     value = aws_security_group.security_group_load_balance.id
-# }
-# output "load_balance" {
-#     description = "ID do load balance"
-#     value = aws_lb.load_balance
-# }

@@ -1,22 +1,22 @@
 variable "access_key" {
-    description = "Aws access key"
-    type = string
-    default = "ASIASBPSPDOI4KQOBAW2"
+  description = "Aws access key"
+  type        = string
+  default     = ""
 }
 variable "secret_key" {
-    description = "Aws secret key"
-    type = string
-    default = "RK6T45/afKKQaeif4J6Nbl3FRjo9vEmqy82HUbm6"
-}
-variable "session_token" {
-    description = "Aws session token"
-    type = string
-    default = "IQoJb3JpZ2luX2VjEG4aCXVzLXdlc3QtMiJHMEUCIAuFUDCvz4wbUuZBMpGzeYCbIEq+KdOPjVgN10TS8+7TAiEAuYI6ip+me7toC21euQ+5GixslQIZuGtKdx0+NEbxLN0quAIINxAAGgwxNDA2MzE4MDg5MTMiDOOke9/vI7YV4TIXjyqVAuOw6mHZGzrg4b1SaX16RXBw8f4b4sujT1y/M7iuUD0yP0IFQ1lorzt87uEutVnIwwby/NhSLBrtv2X/htRRHZ/38NcR555G2E56/DwnKVH/kl0upTVBcJUbnJCpWiOAZRiK0bfAaSfXGh9isCyT1YBJWaXBy3ViXnogkzL4vi3IbpgwBMXMtHlQ8wNWR+t7WVbPSIIaH+Dh9uPueT9hyp4QA1Yeg9hPuMKu3DSMuqiczBG3UMGgOLAyUdyzIzMmsjeBsY+5buEnxVTfG3OVxfZ1f07uljcxRlgpRlUkjgWIM6ejpzJhH4wcNk4xGMEUZINDqtcV4AyJoE2fo6CP4WC7Ka4r2eDRnGt/Bds0qJaiZcbMH6kwuMuCuwY6nQF1nqDKaroTbWkcivnv5R/fH4OCCvKoHqnyvKbJtc6AA5DxTo8QVFQtAYMsf5x2l0+iNBkgszUj/o6Jf7tBZpBIE3m0oD3W3hfy7GHGVswsMLQiWrIbOQ/VoLd2CotxT5pq3Isn5+dV/ngyh8SdDrz7kC2mCM14ZitZ8qwD5sSSsQdl7F2fJGqT3Fye6B4jCKG6DqcX2vSOiZan8QzW"
+  description = "Aws secret key"
+  type        = string
+  default     = ""
 }
 variable "account_id" {
   description = "Aws account id"
   type        = string
-  default     = "140631808913"
+  default     = "970849062346"
+}
+variable "session_token" {
+  description = "Aws session token"
+  type        = string
+  default     = ""
 }
 variable "aws_region" {
   description = "Região dos recursos"
@@ -58,4 +58,88 @@ variable "auto_scale_options" {
     max     = 10
     desired = 2
   }
+}
+
+############## - COGNITO - ##################
+variable "user_pool_name" {
+  description = "Nome do Cognito User Pool"
+  type        = string
+  default     = "Tech-Challenge-User-Pool-Teste"
+}
+
+variable "client_name" {
+  description = "Nome do App Client do Cognito"
+  type        = string
+  default     = "Tech-Challenge-App-Client"
+}
+
+variable "domain_name" {
+  description = "Prefixo do domínio para o Cognito"
+  type        = string
+  default     = "tech-challenge-unique-teste"
+}
+
+variable "oauth_flows" {
+  description = "Fluxos OAuth permitidos"
+  type        = list(string)
+  default     = ["client_credentials"]
+}
+
+variable "oauth_scopes" {
+  description = "Escopos OAuth permitidos"
+  type        = list(string)
+  default     = ["aws.cognito.signin.user.admin"]
+}
+
+variable "tags" {
+  description = "Tags para os recursos"
+  type        = map(string)
+  default     = {
+    "Environment" = "dev"
+    "Project" = "MyProject"
+  }
+}
+
+############## - API GATEWAY - ##################
+variable "api_name" {
+  description = "Nome da API Gateway"
+  type        = string
+  default     = "api_gateway_fast_food"
+}
+
+variable "api_description" {
+  description = "Descrição da API Gateway"
+  type        = string
+  default     = "API criada com Terraform"
+}
+
+variable "path_part" {
+  description = "Parte do caminho da API (ex: 'users')"
+  type        = string
+  default     = "admin"
+}
+
+variable "stage_name" {
+  description = "Nome do estágio da API (ex: 'dev', 'prod')"
+  type        = string
+  default     = "dev"
+}
+
+############## - LAMBDA - ##################
+variable "lambda_name" {
+  description = "Nome da função Lambda"
+  type        = string
+  default     = "authorizer_cognito"
+}
+
+variable "lambda_handler" {
+  description = "Nome do estágio da API (ex: 'dev', 'prod')"
+  type        = string
+  default     = "lambda_function.lambda_handler"
+}
+
+variable "lambda_runtime" {
+  description = "Linguagem de execução da função Lambda"
+  type        = string
+  default     = "python3.12"
 }
