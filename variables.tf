@@ -11,7 +11,7 @@ variable "secret_key" {
 variable "account_id" {
   description = "Aws account id"
   type        = string
-  default     = "970849062346"
+  default     = ""
 }
 variable "session_token" {
   description = "Aws session token"
