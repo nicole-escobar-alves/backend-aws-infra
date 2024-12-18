@@ -104,11 +104,3 @@ module "api_gatewayv2" {
   cognito_client_id = module.cognito.client_id
   cognito_user_pool_id = module.cognito.user_pool_id
 }
-
-terraform {
-  backend "s3" {
-    bucket = "techChallenge-tf"
-    key = "fiap/terraform.tfstate"
-    region = "us-east-1"
-  }
-}
